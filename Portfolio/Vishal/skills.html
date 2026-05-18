@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Vishal Kaarthick V</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skills-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+            margin-top: 2rem;
+        }
+
+        .category-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .category-header i {
+            font-size: 1.2rem;
+        }
+
+        .skill-card-compact {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card-compact:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px -10px rgba(88, 166, 255, 0.2);
+        }
+
+        .skill-card-compact h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-card-compact p {
+            font-size: 0.9rem;
+            color: var(--text-color-secondary);
+            line-height: 1.5;
+        }
+
+        .skill-brief-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .skill-brief-tags .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--accent-color);
+            border-radius: 4px;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+            .skills-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Vishal Kaarthick V</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1200px; margin: 0 auto; padding-bottom: 4rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Technical & Professional Skills</h2>
+            <p style="color: var(--text-color-secondary);">A hierarchical view of my expertise, prioritizing Textile
+                Engineering followed by supporting Software and Professional competencies.</p>
+        </div>
+
+        <!-- Section 1: Textile Technical Skills (TOP) -->
+        <section style="margin-bottom: 4rem;">
+            <div class="category-header"
+                style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <i class="fas fa-microscope" style="font-size: 1.5rem;"></i>
+                <h2 style="font-size: 1.5rem;">Textile Technical Skills</h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-dharmachakra" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Spinning Processes</h3>
+                    </div>
+                    <p>Fibers to yarn processing and machinery optimization.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">Blow Room</span>
+                        <span class="tag">Carding</span>
+                        <span class="tag">Combing</span>
+                        <span class="tag">Ring Spinning</span>
+                    </div>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-vials" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Textile Testing</h3>
+                    </div>
+                    <p>Standardized methods (ASTM/ISO) for material analysis.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">Fiber Testing</span>
+                        <span class="tag">Yarn Testing</span>
+                        <span class="tag">Fabric Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-clipboard-check" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Quality Control</h3>
+                    </div>
+                    <p>Process monitoring and defect analysis in production.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">Process Monitoring</span>
+                        <span class="tag">Defect Analysis</span>
+                        <span class="tag">Lab Mgmt</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Software & Design Skills (MIDDLE) -->
+        <section style="margin-bottom: 4rem;">
+            <div class="category-header"
+                style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <i class="fas fa-laptop-code" style="font-size: 1.5rem;"></i>
+                <h2 style="font-size: 1.5rem;">Software & Design Skills</h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fab fa-python" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Python</h3>
+                    </div>
+                    <p>Data handling, automation, and general programming.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">Analysis</span>
+                        <span class="tag">Scripting</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-draw-polygon" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Fusion 360</h3>
+                    </div>
+                    <p>3D CAD modeling, assembly, and photorealistic rendering.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">CAD</span>
+                        <span class="tag">3D Modeling</span>
+                        <span class="tag">Rendering</span>
+                    </div>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-project-diagram" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Tinkercad & Scratch</h3>
+                    </div>
+                    <p>Rapid prototyping, circuits, and logic foundations.</p>
+                    <div class="skill-brief-tags">
+                        <span class="tag">Circuits</span>
+                        <span class="tag">Logic</span>
+                        <span class="tag">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Professional Skills (BOTTOM) -->
+        <section>
+            <div class="category-header"
+                style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <i class="fas fa-user-tie" style="font-size: 1.5rem;"></i>
+                <h2 style="font-size: 1.5rem;">Professional Skills</h2>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-handshake" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Collaboration</h3>
+                    </div>
+                    <p>Effective teamwork in laboratory and industrial environments.</p>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-comments" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Communication</h3>
+                    </div>
+                    <p>Clear technical reporting and internal presentations.</p>
+                </div>
+
+                <div class="skill-card-compact">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <i class="fas fa-clock" style="color: var(--accent-color); font-size: 1.2rem;"></i>
+                        <h3 style="margin: 0;">Time Management</h3>
+                    </div>
+                    <p>Managing deadlines and prioritizing critical production tasks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Vishal Kaarthick V. All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

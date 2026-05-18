@@ -1,0 +1,265 @@
+/* Base styles handled by Tailwind via CDN */
+
+/* Custom Additions for Cinematic Design */
+
+.film-grain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Data Ticker Animation */
+.ticker-content {
+    animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* 3D Perspective for Hero Hardware */
+.perspective {
+    perspective: 1000px;
+}
+
+#hero-hardware {
+    transform-style: preserve-3d;
+}
+
+/* Bento Card Styles */
+.bento-card {
+    background: #121214;
+    border: 1px solid #2A2A2D;
+    padding: 32px;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(0,240,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.bento-card:hover {
+    border-color: #00F0FF;
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+/* Flow diagram */
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .flow-step { margin-bottom: 0; }
+}
+
+.step-circle {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: #09090A;
+    border: 1px solid #2A2A2D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #6B6B70;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.flow-step:hover .step-circle {
+    background: #39FF14;
+    color: #09090A;
+    border-color: #39FF14;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    transform: scale(1.1);
+}
+
+.step-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #F3F3F4;
+    text-transform: uppercase;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.flow-step:hover .step-text {
+    color: #39FF14;
+}
+
+/* System diagram nodes */
+.diagram-node {
+    width: 120px; height: 120px;
+    background: #121214;
+    border: 1px solid #2A2A2D;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.animated-line {
+    animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: -100; }
+}
+
+/* Hardware Annotations */
+.annotation-line {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 20;
+}
+
+.annotation-line .line {
+    height: 1px;
+    background: #6B6B70;
+    position: relative;
+    transition: background 0.3s ease, width 0.3s ease;
+}
+
+.annotation-line .line::after {
+    content: '';
+    position: absolute;
+    right: 0; top: -1.5px;
+    width: 4px; height: 4px;
+    background: #6B6B70;
+    transition: background 0.3s ease;
+}
+
+.annotation-line[style*="row-reverse"] .line::after {
+    left: 0; right: auto;
+}
+
+.annotation-line .text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #6B6B70;
+    white-space: nowrap;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hardware-container:hover .annotation-line .line,
+.hardware-container:hover .annotation-line .line::after {
+    background: #00F0FF;
+}
+
+.hardware-container:hover .annotation-line .text {
+    color: #00F0FF;
+}
+
+/* Use Case Cards */
+.use-case-card {
+    border-top: 2px solid #2A2A2D;
+    padding: 24px 0;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.use-case-card:hover {
+    border-top-color: #00F0FF;
+}
+
+/* Team Hover */
+.hover-team {
+    padding: 8px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hover-team:hover {
+    background: #121214;
+}
+
+.hover-team:hover .name {
+    color: #00F0FF;
+}
+
+/* Scanline effect */
+.scanline {
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.2) 51%, transparent 51%);
+    background-size: 100% 4px;
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+/* Slow Pulse */
+.animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+/* Fade in animations on scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Decoder text effect font override */
+.decode-text-container {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Modal Active States */
+#portfolio-modal.modal-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#portfolio-modal.modal-active .modal-content {
+    transform: scale(1);
+}
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments | Vishal Kaarthick V</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Vishal Kaarthick V</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="assignments.html" class="active">Assignments</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">Assignments & Projects</h2>
+        <p style="color: var(--text-color-secondary); margin-bottom: 2rem;">A collection of my work in MIT App Inventor,
+            Fusion 360, Tinkercad, and Scratch.</p>
+
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <img src="images/mit.png" alt="MIT App Inventor Project"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;">
+                <h3>MIT App Inventor</h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">App Dev</span>
+                    <span class="skill-tag">Blocks</span>
+                </div>
+                <p>Developing functional mobile applications using <strong>MIT App Inventor</strong>, creating
+                    user-friendly interfaces and logic through visual block-based programming.</p>
+                <a href="documents/mitd.pdf" target="_blank"
+                    style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;">View Project
+                    &rarr;</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card">
+                <img src="images/fusion_360_bottle.png" alt="Fusion 360 Bottle Project"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;">
+                <h3>Fusion 360</h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">Fusion 360</span>
+                    <span class="skill-tag">3D Printing</span>
+                </div>
+                <p>Creating <strong>basic assembly design</strong> projects, focusing on component fit, tolerance
+                    analysis, and functional mechanical structures.</p>
+                <a href="documents/fusiond.pdf" target="_blank"
+                    style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;">View Project
+                    &rarr;</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="card">
+                <img src="images/tinkercad.jpg" alt="Tinkercad Circuit Project"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;">
+                <h3>Tinkercad</h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">Tinkercad</span>
+                    <span class="skill-tag">Arduino</span>
+                </div>
+                <p>Designing and simulating <strong>basic circuits</strong>, integrating sensors and actuators to
+                    demonstrate fundamental electronic principles.</p>
+                <a href="documents/tinkercaddd.pdf" target="_blank"
+                    style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;">View Project
+                    &rarr;</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="card">
+                <img src="images/scratch.png" alt="Scratch Game Project"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;">
+                <h3>Scratch</h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="skill-tag">Scratch</span>
+                    <span class="skill-tag">Game Design</span>
+                </div>
+                <p>An interactive storytelling experience created in Scratch, featuring custom animations and user
+                    choices.</p>
+                <a href="documents/scratchd.pdf" target="_blank"
+                    style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;">View Project
+                    &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Vishal Kaarthick V. All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
