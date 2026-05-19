@@ -211,6 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         linksContainer.innerHTML += `<a href="${data.links.linkedin}" target="_blank" class="text-muted hover:text-primary transition-colors flex items-center gap-1 font-mono text-xs uppercase"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>`;
                     }
                     
+                    // Populate Portfolio Button
+                    const portfolioContainer = document.getElementById('modal-portfolio-container');
+                    if (portfolioContainer) {
+                        portfolioContainer.innerHTML = '';
+                        const portfolioLinkElement = link.querySelector('a');
+                        const portfolioUrl = portfolioLinkElement ? portfolioLinkElement.getAttribute('href') : null;
+                        
+                        if (portfolioUrl && portfolioUrl !== '#') {
+                            portfolioContainer.innerHTML = `<a href="${portfolioUrl}" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-background font-mono text-sm uppercase tracking-widest hover:bg-primary/80 transition-colors rounded-brutal w-full md:w-auto shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]">View Full Portfolio <i data-lucide="external-link" class="w-4 h-4"></i></a>`;
+                        }
+                    }
+                    
                     // Re-initialize lucide icons for the new dynamic HTML
                     if(window.lucide) {
                         lucide.createIcons();
