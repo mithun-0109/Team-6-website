@@ -135,42 +135,48 @@ document.addEventListener('DOMContentLoaded', () => {
             role: "Visionary",
             bio: "Leading the project vision and ensuring alignment with industry needs. Specializes in product strategy and high-level system architecture.",
             skills: ["Strategy", "System Design", "Leadership"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/Archana_portfolio/Archana-p.jpeg"
         },
         srinithi: {
             name: "Srinithi K",
             role: "Co-Leader",
             bio: "Driving the project execution and managing cross-functional tasks to keep the team on track.",
             skills: ["Management", "Coordination", "Agile"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/Srinithi/Srinithi.jpeg"
         },
         vipin: {
             name: "Vipin K",
             role: "Hardware",
             bio: "Architecting the ESP32 firmware and sensor integrations. Expert in embedded systems and rapid prototyping.",
             skills: ["ESP32", "C++", "Circuit Design", "I2C/SPI"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/VIPIN_PORTFOLIO/assets/20260519_100232.jpg"
         },
         mithun: {
             name: "Mithun S",
             role: "Coding",
             bio: "Full-stack developer building the REST API, data pipelines, and the interactive dashboard for shade analysis.",
             skills: ["Django", "React", "Python", "REST API"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/Mithun/uploads/DSC03928.jpg"
         },
         bojaraaj: {
             name: "Bojaraaj P",
             role: "Design",
             bio: "Creating the visual language and user experience. Translating complex data into intuitive, cinematic interfaces.",
             skills: ["UI/UX", "Figma", "Frontend", "Interaction"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/Boja/profile.jpg"
         },
         vishal: {
             name: "Vishal K",
             role: "Industrial Connect",
             bio: "Bridging the gap between the lab and the factory floor. Ensuring the product meets real-world textile manufacturing standards.",
             skills: ["Textile Eng", "Quality Control", "Industry Relations"],
-            links: { github: "#", linkedin: "#" }
+            links: { github: "#", linkedin: "#" },
+            image: "Portfolio/Vishal/images/profile.png"
         }
     };
 
@@ -179,60 +185,69 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalOverlay = document.querySelector('.modal-overlay');
     const teamLinks = document.querySelectorAll('.team-member-link');
 
-    if(modal && teamLinks.length > 0) {
-        teamLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const memberId = link.getAttribute('data-member');
-                const data = teamData[memberId];
+    if(modal) {
+        document.body.addEventListener('click', (e) => {
+            const link = e.target.closest('.team-member-link');
+            if (!link) return;
+
+            const memberId = link.getAttribute('data-member');
+            const data = teamData[memberId];
+            
+            if(data) {
+                // Populate modal
+                document.getElementById('modal-name').innerText = data.name;
+                document.getElementById('modal-role').innerText = data.role;
+                document.getElementById('modal-bio').innerText = data.bio;
                 
-                if(data) {
-                    // Populate modal
-                    document.getElementById('modal-name').innerText = data.name;
-                    document.getElementById('modal-role').innerText = data.role;
-                    document.getElementById('modal-bio').innerText = data.bio;
-                    
-                    // Populate skills
-                    const skillsContainer = document.getElementById('modal-skills');
-                    skillsContainer.innerHTML = '';
-                    data.skills.forEach(skill => {
-                        const skillBadge = document.createElement('span');
-                        skillBadge.className = 'font-mono text-[10px] text-muted border border-[#2A2A2D] bg-[#1a1a1c] px-2 py-1 rounded-brutal uppercase';
-                        skillBadge.innerText = skill;
-                        skillsContainer.appendChild(skillBadge);
-                    });
-                    
-                    // Populate links
-                    const linksContainer = document.getElementById('modal-links');
-                    linksContainer.innerHTML = '';
-                    if(data.links.github) {
-                        linksContainer.innerHTML += `<a href="${data.links.github}" target="_blank" class="text-muted hover:text-primary transition-colors flex items-center gap-1 font-mono text-xs uppercase"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>`;
+                const avatarContainer = document.getElementById('modal-avatar-container');
+                if(avatarContainer) {
+                    if(data.image) {
+                        avatarContainer.innerHTML = `<img src="${data.image}" alt="${data.name}" class="w-full h-full object-cover">`;
+                    } else {
+                        avatarContainer.innerHTML = `<i data-lucide="user" class="w-12 h-12 text-muted group-hover:text-primary transition-colors"></i>`;
                     }
-                    if(data.links.linkedin) {
-                        linksContainer.innerHTML += `<a href="${data.links.linkedin}" target="_blank" class="text-muted hover:text-primary transition-colors flex items-center gap-1 font-mono text-xs uppercase"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>`;
-                    }
-                    
-                    // Populate Portfolio Button
-                    const portfolioContainer = document.getElementById('modal-portfolio-container');
-                    if (portfolioContainer) {
-                        portfolioContainer.innerHTML = '';
-                        const portfolioLinkElement = link.querySelector('a');
-                        const portfolioUrl = portfolioLinkElement ? portfolioLinkElement.getAttribute('href') : null;
-                        
-                        if (portfolioUrl && portfolioUrl !== '#') {
-                            portfolioContainer.innerHTML = `<a href="${portfolioUrl}" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-background font-mono text-sm uppercase tracking-widest hover:bg-primary/80 transition-colors rounded-brutal w-full md:w-auto shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]">View Full Portfolio <i data-lucide="external-link" class="w-4 h-4"></i></a>`;
-                        }
-                    }
-                    
-                    // Re-initialize lucide icons for the new dynamic HTML
-                    if(window.lucide) {
-                        lucide.createIcons();
-                    }
-                    
-                    // Show modal
-                    modal.classList.add('modal-active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 }
-            });
+                // Populate skills
+                const skillsContainer = document.getElementById('modal-skills');
+                skillsContainer.innerHTML = '';
+                data.skills.forEach(skill => {
+                    const skillBadge = document.createElement('span');
+                    skillBadge.className = 'font-mono text-[10px] text-muted border border-[#2A2A2D] bg-[#1a1a1c] px-2 py-1 rounded-brutal uppercase';
+                    skillBadge.innerText = skill;
+                    skillsContainer.appendChild(skillBadge);
+                });
+                
+                // Populate links
+                const linksContainer = document.getElementById('modal-links');
+                linksContainer.innerHTML = '';
+                if(data.links.github) {
+                    linksContainer.innerHTML += `<a href="${data.links.github}" target="_blank" class="text-muted hover:text-primary transition-colors flex items-center gap-1 font-mono text-xs uppercase"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>`;
+                }
+                if(data.links.linkedin) {
+                    linksContainer.innerHTML += `<a href="${data.links.linkedin}" target="_blank" class="text-muted hover:text-primary transition-colors flex items-center gap-1 font-mono text-xs uppercase"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>`;
+                }
+                
+                // Populate Portfolio Button
+                const portfolioContainer = document.getElementById('modal-portfolio-container');
+                if (portfolioContainer) {
+                    portfolioContainer.innerHTML = '';
+                    const portfolioLinkElement = link.querySelector('a');
+                    const portfolioUrl = portfolioLinkElement ? portfolioLinkElement.getAttribute('href') : null;
+                    
+                    if (portfolioUrl && portfolioUrl !== '#') {
+                        portfolioContainer.innerHTML = `<a href="${portfolioUrl}" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-background font-mono text-sm uppercase tracking-widest hover:bg-primary/80 transition-colors rounded-brutal w-full md:w-auto shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]">View Full Portfolio <i data-lucide="external-link" class="w-4 h-4"></i></a>`;
+                    }
+                }
+                
+                // Re-initialize lucide icons for the new dynamic HTML
+                if(window.lucide) {
+                    lucide.createIcons();
+                }
+                
+                // Show modal
+                modal.classList.add('modal-active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
         });
         
         const closeModal = () => {
@@ -249,5 +264,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
         });
+    }
+
+    // 7. Auto-scrolling Team Carousel
+    const teamScrollContainer = document.getElementById('team-scroll-container');
+    if (teamScrollContainer) {
+        // Clone all children to create a seamless infinite scroll loop
+        const children = Array.from(teamScrollContainer.children);
+        children.forEach(child => {
+            teamScrollContainer.appendChild(child.cloneNode(true));
+        });
+
+        let isHovered = false;
+        
+        teamScrollContainer.addEventListener('mouseenter', () => isHovered = true);
+        teamScrollContainer.addEventListener('mouseleave', () => isHovered = false);
+        teamScrollContainer.addEventListener('touchstart', () => isHovered = true);
+        teamScrollContainer.addEventListener('touchend', () => isHovered = false);
+
+        function autoScroll() {
+            if (!isHovered) {
+                teamScrollContainer.scrollLeft += 1; // Scroll speed
+                
+                // If we've scrolled past the first set of items, reset back to 0 seamlessly
+                if (teamScrollContainer.scrollLeft >= teamScrollContainer.scrollWidth / 2) {
+                    teamScrollContainer.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+        
+        // Start the loop
+        requestAnimationFrame(autoScroll);
     }
 });
