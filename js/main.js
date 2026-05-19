@@ -275,26 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
             teamScrollContainer.appendChild(child.cloneNode(true));
         });
 
-        let isHovered = false;
-        
-        teamScrollContainer.addEventListener('mouseenter', () => isHovered = true);
-        teamScrollContainer.addEventListener('mouseleave', () => isHovered = false);
-        teamScrollContainer.addEventListener('touchstart', () => isHovered = true);
-        teamScrollContainer.addEventListener('touchend', () => isHovered = false);
-
-        function autoScroll() {
-            if (!isHovered) {
-                teamScrollContainer.scrollLeft += 1; // Scroll speed
-                
-                // If we've scrolled past the first set of items, reset back to 0 seamlessly
-                if (teamScrollContainer.scrollLeft >= teamScrollContainer.scrollWidth / 2) {
-                    teamScrollContainer.scrollLeft = 0;
-                }
-            }
-            requestAnimationFrame(autoScroll);
-        }
-        
-        // Start the loop
-        requestAnimationFrame(autoScroll);
+        // Pure CSS animation (marquee) is handling the scrolling.
     }
 });

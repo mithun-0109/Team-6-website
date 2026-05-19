@@ -585,9 +585,8 @@
                     <p class="font-mono text-muted mt-2 text-sm uppercase tracking-widest">Architects of ColorPro</p>
                 </div>
 
-                <div id="team-scroll-container"
-                    class="flex overflow-x-auto gap-8 pt-8 pb-12 px-4 -mx-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] fade-in w-full"
-                    style="--delay: 0.2s">
+                <div class="overflow-hidden w-full fade-in -mx-4 px-4" style="--delay: 0.2s">
+                    <div id="team-scroll-container" class="flex gap-8 w-max pt-8 pb-16 animate-marquee hover:pause-marquee">
                     <!-- Archana -->
                     <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="archana">
@@ -744,6 +743,7 @@
                             </a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>

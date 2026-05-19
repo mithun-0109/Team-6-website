@@ -263,3 +263,16 @@
     transform: scale(1);
 }
 
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); } /* -1rem to account for gap-8 (2rem) */
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.hover\:pause-marquee:hover {
+  animation-play-state: paused;
+}
