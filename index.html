@@ -578,17 +578,26 @@
         </section>
 
         <!-- SCREEN 5: THE TEAM -->
-        <section class="py-24 px-6 border-t border-border bg-background relative overflow-hidden" id="the-team">
-            <div class="max-w-7xl mx-auto">
+        <section class="py-24 border-t border-border bg-background relative overflow-hidden" id="the-team">
+            <div class="max-w-7xl mx-auto px-6">
                 <div class="mb-16 fade-in">
                     <h2 class="font-display text-4xl uppercase">The Team 6</h2>
                     <p class="font-mono text-muted mt-2 text-sm uppercase tracking-widest">Architects of ColorPro</p>
                 </div>
+            </div>
 
-                <div class="overflow-hidden w-full fade-in -mx-4 px-4" style="--delay: 0.2s">
-                    <div id="team-scroll-container" class="flex gap-8 w-max pt-8 pb-16 animate-marquee hover:pause-marquee">
+            <div id="team-carousel-wrapper" class="relative group/carousel fade-in w-full" style="--delay: 0.2s">
+                    <!-- Navigation Buttons -->
+                    <button id="team-prev" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-[#121214]/80 backdrop-blur-md border border-[#2A2A2D] text-text p-3 rounded-full shadow-2xl hover:bg-primary hover:text-background hover:border-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0 hidden md:flex items-center justify-center">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="team-next" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-[#121214]/80 backdrop-blur-md border border-[#2A2A2D] text-text p-3 rounded-full shadow-2xl hover:bg-primary hover:text-background hover:border-primary transition-all opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0 hidden md:flex items-center justify-center">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <div id="team-scroll-container" class="flex overflow-x-auto gap-6 md:gap-8 pt-8 pb-16 px-6 xl:px-[calc((100vw-80rem)/2+1.5rem)] snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     <!-- Archana -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="archana">
                         <img src="Portfolio/Archana_portfolio/Archana-p.jpeg" alt="Archana R"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -614,7 +623,7 @@
                     </div>
 
                     <!-- Srinithi -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="srinithi">
                         <img src="Portfolio/Srinithi/Srinithi.jpeg" alt="Srinithi K"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -640,7 +649,7 @@
                     </div>
 
                     <!-- Vipin -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="vipin">
                         <img src="Portfolio/VIPIN_PORTFOLIO/assets/20260519_100232.jpg" alt="Vipin K"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -666,7 +675,7 @@
                     </div>
 
                     <!-- Mithun -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="mithun">
                         <img src="Portfolio/Mithun/uploads/DSC03928.jpg" alt="Mithun S"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -692,7 +701,7 @@
                     </div>
 
                     <!-- Bojaraaj -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="bojaraaj">
                         <img src="Portfolio/Boja/profile.jpg" alt="Bojaraaj P"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -718,7 +727,7 @@
                     </div>
 
                     <!-- Vishal -->
-                    <div class="min-w-[280px] md:min-w-[320px] aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
+                    <div class="min-w-[80vw] sm:min-w-[320px] snap-center aspect-[3/4] relative rounded-2xl border border-border overflow-hidden cursor-pointer team-member-link group shadow-sm hover:border-primary/50 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,240,255,0.15)] hover:z-10 flex-shrink-0 bg-[#0a0a0b]"
                         data-member="vishal">
                         <img src="Portfolio/Vishal/images/profile.png" alt="Vishal K"
                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 filter grayscale-[0.8] opacity-80 group-hover:grayscale-0 group-hover:opacity-100">
@@ -744,8 +753,6 @@
                         </div>
                     </div>
                 </div>
-                </div>
-            </div>
         </section>
     </main>
 

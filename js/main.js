@@ -266,15 +266,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 7. Auto-scrolling Team Carousel
+    // 7. Auto-scrolling Team Carousel with Arrows
     const teamScrollContainer = document.getElementById('team-scroll-container');
-    if (teamScrollContainer) {
-        // Clone all children to create a seamless infinite scroll loop
-        const children = Array.from(teamScrollContainer.children);
-        children.forEach(child => {
-            teamScrollContainer.appendChild(child.cloneNode(true));
-        });
+    const prevBtn = document.getElementById('team-prev');
+    const nextBtn = document.getElementById('team-next');
+    const carouselWrap = document.getElementById('team-carousel-wrapper');
 
-        // Pure CSS animation (marquee) is handling the scrolling.
+    if (teamScrollContainer && prevBtn && nextBtn) {
+        const getScrollAmount = () => {
+            const card = teamScrollContainer.children[0];
+            return card ? card.offsetWidth + 24 : 320; // card width + gap
+        };
+
+        const scrollNext = () => {
+            if (teamScrollContainer.scrollLeft + teamScrollContainer.clientWidth >= teamScrollContainer.scrollWidth - 10) {
+                // Reached end, scroll back to start
+                teamScrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                teamScrollContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            }
+        };
+
+        const scrollPrev = () => {
+            if (teamScrollContainer.scrollLeft <= 10) {
+                // At start, scroll to end
+                teamScrollContainer.scrollTo({ left: teamScrollContainer.scrollWidth, behavior: 'smooth' });
+            } else {
+                teamScrollContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            }
+        };
+
+        nextBtn.addEventListener('click', scrollNext);
+        prevBtn.addEventListener('click', scrollPrev);
+
+        // Auto scroll every 3 seconds
+        let autoScrollInterval = setInterval(scrollNext, 3000);
+        
+        if (carouselWrap) {
+            // Pause on hover or touch
+            carouselWrap.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+            carouselWrap.addEventListener('mouseleave', () => {
+                clearInterval(autoScrollInterval); // ensure no duplicates
+                autoScrollInterval = setInterval(scrollNext, 3000);
+            });
+            carouselWrap.addEventListener('touchstart', () => clearInterval(autoScrollInterval));
+            carouselWrap.addEventListener('touchend', () => {
+                clearInterval(autoScrollInterval);
+                autoScrollInterval = setInterval(scrollNext, 3000);
+            });
+        }
     }
 });
